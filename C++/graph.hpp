@@ -21,7 +21,6 @@ class Vertex {
   bool has_edge_id(const EdgeId& id) const;
 
  private:
-  int depth_;
   VertexId id_;
   std::vector<EdgeId> edge_ids_;
 };
@@ -34,9 +33,9 @@ class Edge {
        const VertexId& vertex2_id,
        const EdgeId& id,
        const Color& color)
-      : vertex1_id_(vertex1_id),
+      : id_(id),
+        vertex1_id_(vertex1_id),
         vertex2_id_(vertex2_id),
-        id_(id),
         color_(color) {}
 
   Color get_color() const;
